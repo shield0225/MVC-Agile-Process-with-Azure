@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace MvcMovie.Models
+namespace MVC_Agile_Process_with_Agile.Models
 {
     public class MvcMovieContext : DbContext
     {
@@ -14,6 +14,6 @@ namespace MvcMovie.Models
         {
         }
 
-        public DbSet<MVC-Agile-Process-with-Azure.Models.Movie> Movie { get; set; }
+        public DbSet<MVC_Agile_Process_with_Agile.Models.Movie> Movie { get; set; }
     }
 }
