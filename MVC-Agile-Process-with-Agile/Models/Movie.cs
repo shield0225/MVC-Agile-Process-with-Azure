@@ -1,39 +1,34 @@
-﻿#define MovieDateRatingDA
-#if MovieDateRatingDA
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MvcMovie.Models
+namespace MVC_Agile_Process_with_Agile.Models
 {
-    #region snippet1
     public class Movie
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [StringLength(60, MinimumLength = 3)]
         [Required]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
-        #region snippet2
         [Display(Name = "Release Date")]
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
 
         [Range(1, 100)]
         [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal Price { get; set; }
-        #endregion
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
         [Required]
         [StringLength(30)]
-        public string Genre { get; set; }
+        public string? Genre { get; set; }
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
         [StringLength(5)]
         [Required]
-        public string Rating { get; set; }
+        public string? Rating { get; set; }
     }
-    #endregion
 }
-#endif
